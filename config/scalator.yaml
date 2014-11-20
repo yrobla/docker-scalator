@@ -1,0 +1,31 @@
+cleanup: '* * * * *'
+check: '*/15 * * * *'
+rabbit-publishers:
+    - amqp://RABBIT_USER:RABBIT_PASS@RABBIT_HOST:RABBIT_PORT/RABBIT_VHOST
+rabbit-queues:
+    - Revelator_in_queue_en
+    - Revelator_in_queue_nl
+    - Revelator_in_queue_es
+languages:
+    - eng
+    - nld
+    - esp
+dburi: mysql://MYSQL_USER:MYSQL_PASS@MYSQL_HOST:MYSQL_PORT/MYSQL_DATABASE
+
+cron:
+  check: '*/15 * * * *'
+  cleanup: '*/1 * * * *'
+
+boot-timeout: BOOT_TIMEOUT
+launch-timeout: LAUNCH_TIMEOUT
+messages-per-node: MESSAGES_PER_NODE
+max-servers: MAX_SERVERS
+provider-token: DIGITALOCEAN_PROVIDER_TOKEN
+provider-version: DIGITALOCEAN_PROVIDER_VERSION
+provider-size: DIGITALOCEAN_PROVIDER_SIZE
+private-user: root
+private-key: /root/.ssh/id_rsa
+
+rabbit-host: RABBIT_HOST:RABBIT_PORT
+rabbit-user: RABBIT_USER
+rabbit-password: RABBIT_PASS

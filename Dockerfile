@@ -14,13 +14,13 @@ ADD scripts/entrypoint.sh /usr/local/bin/
 
 # create folders
 RUN mkdir /etc/scalator
-RUN mkdir /etc/scalator/templates
+RUN mkdir -p /var/lib/scalator/templates
 RUN mkdir /var/log/scalator
 
 # add config file
 ADD config/scalator.yaml /etc/scalator/scalator.yaml
 ADD config/logging.conf /etc/scalator/logging.conf
-ADD config/rabbit_config /etc/scalator/templates/rabbit_config
+ADD config/rabbit_config /var/lib/scalator/templates/rabbit_config
 
 # replace content of template and start running
 WORKDIR /home/scalator/
